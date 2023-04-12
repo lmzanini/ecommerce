@@ -51,7 +51,4 @@ export class ProdutoService {
     return this.http.delete(`${this.apiUrl}/deletar/${id}`);
   }
 
-
-
-
 }

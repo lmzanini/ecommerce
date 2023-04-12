@@ -4,27 +4,40 @@
       <app-menu-lateral></app-menu-lateral>
     </div>
 
-    <div class="col-md-9 pl-md-3 mt-4">
-      <h2 class="text-center">Cadastro de Categoria</h2>
-      <form class="mx-auto" style="max-width: 600px;" (ngSubmit)="onSubmit(nome)">
-        <div class="form-group">
-          <label for="nomeCategoria">Nome da Categoria</label>
-          <input type="text" class="form-control" id="nomeCategoria"[(ngModel)]="nome" name="nome">
+    <div class="col-md-7 pl-md-3 mt-4 mx-auto">
+
+      <div class="card shadow mt-4 mb-4">
+
+        <div class="card-header text-center">
+          <h2 class="text-center">Cadastro de Categoria</h2>
         </div>
-        <button type="submit" class="btn btn-primary mt-4 mb-4">Cadastrar</button>
-        <div
-        *ngIf="mensagem"
-        class="alert alert-dismissible fade show"
-        [ngClass]="{
-          'alert-success': tipoMensagem === 'success',
-          'alert-danger': tipoMensagem === 'danger'
-        }"
-        role="alert"
-      >
-        <span>{{ mensagem }}</span>
+
+        <div class="card-body">
+          <form class="mx-auto" style="max-width: 600px;" (ngSubmit)="onSubmit(nome)">
+            <div class="form-group">
+              <label for="nomeCategoria">Nome da Categoria</label>
+              <input type="text" class="form-control" id="nomeCategoria"[(ngModel)]="nome" name="nome">
+            </div>
+            <button type="submit" class="btn btn-primary mt-4 mb-4">Cadastrar</button>
+            <div
+            *ngIf="mensagem"
+            class="alert alert-dismissible fade show"
+            [ngClass]="{
+              'alert-success': tipoMensagem === 'success',
+              'alert-danger': tipoMensagem === 'danger'
+            }"
+            role="alert"
+          >
+            <span>{{ mensagem }}</span>
+          </div>
+
+          </form>
+        </div>
+
       </div>
 
-      </form>
+
+
 
       <hr>
       <div class="col-md-7 pl-md-3 mt-4 mx-auto">

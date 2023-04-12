@@ -4,111 +4,126 @@
       <app-menu-lateral></app-menu-lateral>
     </div>
 
-    <div class="col-md-9 pl-md-3 mt-4">
-      <h2 class="text-center">Cadastro de Produto</h2>
-      <form class="mx-auto" style="max-width: 600px" #produtoForm="ngForm" (ngSubmit)="submitForm(produtoForm)" enctype="multipart/form-data">
-        <div class="form-group">
-          <label for="nome">Nome</label>
-          <input type="text" class="form-control" id="nome" name="nome" required [(ngModel)]="produto.nome">
-        </div>
-        <div class="form-group mt-4">
-          <label for="especificacao">Especificação</label>
-          <textarea type="text" class="form-control" id="especificacao" name="especificacao" required [(ngModel)]="produto.especificacao"></textarea>
+    <div class="col-md-7 pl-md-3 mt-4 mx-auto">
 
-        </div>
-        <div class="form-group mt-4">
-          <label for="descricao">Descrição</label>
-          <textarea class="form-control" id="descricao" name="descricao" required [(ngModel)]="produto.descricao"></textarea>
-        </div>
-        <div class="form-group mt-4">
-          <label for="descricao_curta">Descrição curta</label>
-          <input type="text" class="form-control" id="descricao_curta" name="descricao_curta" required [(ngModel)]="produto.descricao_curta">
-        </div>
-        <div class="form-group mt-4">
-          <label for="valor">Valor</label>
-          <input type="number" class="form-control" id="valor" name="valor" required [(ngModel)]="produto.valor" (ngModelChange)="onValorChange()">
-        </div>
-        <div class="form-group mt-4">
-          <label for="desconto">Desconto</label>
-          <input type="number" class="form-control" id="desconto" name="desconto" required [(ngModel)]="produto.desconto" (ngModelChange)="onValorChange()">
+      <div class="card shadow mt-4 mb-4">
+
+        <div class="card-header text-center">
+          <h2 class="text-center">Cadastro de Produto</h2>
         </div>
 
-        <div class="form-group mt-4">
-          <label for="valor_atual">Valor Final</label>
-          <input type="number" class="form-control" id="valor_atual" name="valor_atual" [(ngModel)]="produto.valor_atual" disabled="">
-        </div>
+        <div class="card-body">
+
+          <form class="mx-auto" style="max-width: 600px" #produtoForm="ngForm" (ngSubmit)="submitForm(produtoForm)" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="nome">Nome</label>
+              <input type="text" class="form-control" id="nome" name="nome" required [(ngModel)]="produto.nome">
+            </div>
+            <div class="form-group mt-4">
+              <label for="especificacao">Especificação</label>
+              <textarea type="text" class="form-control" id="especificacao" name="especificacao" required [(ngModel)]="produto.especificacao"></textarea>
+
+            </div>
+            <div class="form-group mt-4">
+              <label for="descricao">Descrição</label>
+              <textarea class="form-control" id="descricao" name="descricao" required [(ngModel)]="produto.descricao"></textarea>
+            </div>
+            <div class="form-group mt-4">
+              <label for="descricao_curta">Descrição curta</label>
+              <input type="text" class="form-control" id="descricao_curta" name="descricao_curta" required [(ngModel)]="produto.descricao_curta">
+            </div>
+            <div class="form-group mt-4">
+              <label for="valor">Valor</label>
+              <input type="number" class="form-control" id="valor" name="valor" required [(ngModel)]="produto.valor" (ngModelChange)="onValorChange()">
+            </div>
+            <div class="form-group mt-4">
+              <label for="desconto">Desconto</label>
+              <input type="number" class="form-control" id="desconto" name="desconto" required [(ngModel)]="produto.desconto" (ngModelChange)="onValorChange()">
+            </div>
+
+            <div class="form-group mt-4">
+              <label for="valor_atual">Valor Final</label>
+              <input type="number" class="form-control" id="valor_atual" name="valor_atual" [(ngModel)]="produto.valor_atual" disabled="">
+            </div>
 
 
-        <div class="form-group mt-4">
-          <label for="quantidade">Quantidade</label>
-          <input type="number" class="form-control" id="quantidade" name="quantidade" required [(ngModel)]="produto.quantidade">
-        </div>
+            <div class="form-group mt-4">
+              <label for="quantidade">Quantidade</label>
+              <input type="number" class="form-control" id="quantidade" name="quantidade" required [(ngModel)]="produto.quantidade">
+            </div>
 
 
-        <div class="form-check mt-4">
-          <input class="form-check-input custom-control-input" type="checkbox" id="ativo" name="ativo" [(ngModel)]="produto.ativo">
-          <label class="form-check-label custom-control-label" for="ativo"> Ativo</label>
-        </div>
+            <div class="form-check mt-4">
+              <input class="form-check-input custom-control-input" type="checkbox" id="ativo" name="ativo" [(ngModel)]="produto.ativo">
+              <label class="form-check-label custom-control-label" for="ativo"> Ativo</label>
+            </div>
 
-        <div class="form-check">
-          <input class="form-check-input custom-control-input" type="checkbox" id="destaque" name="destaque" [(ngModel)]="produto.destaque">
-          <label class="form-check-label custom-control-label" for="destaque"> Destaque</label>
-        </div>
+            <div class="form-check">
+              <input class="form-check-input custom-control-input" type="checkbox" id="destaque" name="destaque" [(ngModel)]="produto.destaque">
+              <label class="form-check-label custom-control-label" for="destaque"> Destaque</label>
+            </div>
 
-        <div class="form-check">
-          <input class="form-check-input custom-control-input" type="checkbox" id="oferta" name="oferta" [(ngModel)]="produto.oferta">
-          <label class="form-check-label custom-control-label" for="oferta"> Oferta</label>
-        </div>
+            <div class="form-check">
+              <input class="form-check-input custom-control-input" type="checkbox" id="oferta" name="oferta" [(ngModel)]="produto.oferta">
+              <label class="form-check-label custom-control-label" for="oferta"> Oferta</label>
+            </div>
 
 
 
-        <div class="form-group mt-4">
-          <label for="categorias">Categorias:</label>
-          <select class="form-control" id="categorias" name="categorias" [(ngModel)]="produto.categorias" placeholder="Selecione uma categoria">
-            <option value="">Selecione uma categoria</option>
-            <option *ngFor="let categoria of categorias" [value]="categoria.id_categorias">{{ categoria.nome }}</option>
-          </select>
-          <button type="button" class="btn btn-primary mt-4" (click)="adicionarCategoriaSelecionada()">Adicionar</button>
-        </div>
+            <div class="form-group mt-4">
+              <label for="categorias">Categorias:</label>
+              <select class="form-control" id="categorias" name="categorias" [(ngModel)]="produto.categorias" placeholder="Selecione uma categoria">
+                <option value="">Selecione uma categoria</option>
+                <option *ngFor="let categoria of categorias" [value]="categoria.id_categorias">{{ categoria.nome }}</option>
+              </select>
+              <button type="button" class="btn btn-primary mt-4" (click)="adicionarCategoriaSelecionada()">Adicionar</button>
+            </div>
 
-        <h5 class="text-center mt-4">Categorias selecionadas:</h5>
-        <div *ngIf="categoriasSelecionadas.length > 0" class="d-flex flex-wrap">
-          <div *ngFor="let categoria of categoriasSelecionadas" class="mr-2">
-            <span class="lista-categoria">{{ categoria.nome }}</span>
-            <button type="button" class="btn btn-sm btn-danger ml-1" (click)="removerCategoriaSelecionada(categoria)">
-              <i class="fas fa-times"></i>
-            </button>
+            <h5 class="text-center mt-4">Categorias selecionadas:</h5>
+            <div *ngIf="categoriasSelecionadas.length > 0" class="d-flex flex-wrap">
+              <div *ngFor="let categoria of categoriasSelecionadas" class="mr-2">
+                <span class="lista-categoria">{{ categoria.nome }}</span>
+                <button type="button" class="btn btn-sm btn-danger ml-1" (click)="removerCategoriaSelecionada(categoria)">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="form-group mt-4 mb-4">
+              <label for="imagem">Imagens:</label>
+              <div class="custom-file mt-4">
+                <input type="file" class="custom-file-input" id="imagem" (change)="onFileSelected($event)" multiple>
+                <label class="custom-file-label" for="imagem">Escolha as imagens</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12 col-md-9 d-flex">
+                <div id="imagem-preview" class="row"></div>
+              </div>
+            </div>
+
+            <div
+            *ngIf="mensagem"
+            class="alert alert-dismissible fade show"
+            [ngClass]="{
+              'alert-success': tipoMensagem === 'success',
+              'alert-danger': tipoMensagem === 'danger'
+            }"
+            role="alert"
+          >
+            <span>{{ mensagem }}</span>
           </div>
+
+            <button type="submit" class="btn btn-primary mb-4 mt-4">Cadastrar</button>
+          </form>
+
         </div>
 
-        <div class="form-group mt-4 mb-4">
-          <label for="imagem">Imagens:</label>
-          <div class="custom-file mt-4">
-            <input type="file" class="custom-file-input" id="imagem" (change)="onFileSelected($event)" multiple>
-            <label class="custom-file-label" for="imagem">Escolha as imagens</label>
-          </div>
-        </div>
 
-        <div class="row">
-          <div class="col-12 col-md-9 d-flex">
-            <div id="imagem-preview" class="row"></div>
-          </div>
-        </div>
-
-        <div
-        *ngIf="mensagem"
-        class="alert alert-dismissible fade show"
-        [ngClass]="{
-          'alert-success': tipoMensagem === 'success',
-          'alert-danger': tipoMensagem === 'danger'
-        }"
-        role="alert"
-      >
-        <span>{{ mensagem }}</span>
       </div>
 
-        <button type="submit" class="btn btn-primary mb-4 mt-4">Cadastrar</button>
-      </form>
+
 
 
     </div>

@@ -37,6 +37,7 @@ import { AtualizarUsuarioEnderecoComponent } from './atualizar-usuario-endereco/
 import { CadastrarUsuarioEnderecoComponent } from './cadastrar-usuario-endereco/cadastrar-usuario-endereco.component';
 import { EsqueciMinhaSenhaComponent } from './esqueci-minha-senha/esqueci-minha-senha.component';
 import { TesteComponent } from './teste/teste.component';
+import { ChunkByPipe } from './chunk-by.pipe';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { TesteComponent } from './teste/teste.component';
     AtualizarUsuarioEnderecoComponent,
     CadastrarUsuarioEnderecoComponent,
     EsqueciMinhaSenhaComponent,
-    TesteComponent
+    TesteComponent,
+    ChunkByPipe
   ],
   imports: [
     BrowserModule,

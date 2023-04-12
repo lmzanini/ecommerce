@@ -32,3 +32,7 @@
   text-align: center;
   text-justify: auto;
 }
+
+.border-5{
+  border-color: #BC8B3F !important;
+}

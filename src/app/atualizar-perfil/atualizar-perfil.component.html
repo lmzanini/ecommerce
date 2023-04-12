@@ -5,44 +5,54 @@
     </div>
 
     <div class="col-md-7 pl-md-3 mt-4 mx-auto vh-100">
-      <h2 class="text-center">Atualizar Perfil</h2>
+      <div class="card shadow mt-4 mb-4">
 
-      <form (ngSubmit)="atualizarUsuario()" #form="ngForm">
-        <div class="form-group mt-2">
-          <label for="nome_completo">Nome Completo:</label>
-          <input type="text" class="form-control" name="nome_completo" [(ngModel)]="usuario.nome_completo" required>
+        <div class="card-header text-center">
+          <h2 class="text-center">Atualizar Perfil <i class="fa-solid fa-circle-user"></i></h2>
+
         </div>
 
-        <div class="form-group mt-2">
-          <label for="email">Email:</label>
-          <input type="email" class="form-control" name="email" [(ngModel)]="usuario.email" required>
+        <div class="card-body">
+          <form (ngSubmit)="atualizarUsuario()" #form="ngForm">
+            <div class="form-group mt-2">
+              <label for="nome_completo">Nome Completo:</label>
+              <input type="text" class="form-control" name="nome_completo" [(ngModel)]="usuario.nome_completo" required>
+            </div>
+
+            <div class="form-group mt-2">
+              <label for="email">Email:</label>
+              <input type="email" class="form-control" name="email" [(ngModel)]="usuario.email" required>
+            </div>
+
+            <div class="form-group mt-2">
+              <label for="telefone">Telefone:</label>
+              <input type="text" class="form-control" name="telefone" [(ngModel)]="usuario.telefone" required>
+            </div>
+
+            <div class="form-group mt-2">
+              <label for="cpf">CPF:</label>
+              <input type="text" class="form-control" name="cpf" [(ngModel)]="usuario.cpf" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary mt-4 mr-4">Atualizar</button>
+            <button type="button" routerLink="/perfil" class="btn btn-dark mt-4">Voltar</button>
+
+            <div
+            *ngIf="mensagem"
+            class="alert alert-dismissible fade show"
+            [ngClass]="{
+              'alert-success': tipoMensagem === 'success',
+              'alert-danger': tipoMensagem === 'danger'
+            }"
+            role="alert"
+          >
+            <span>{{ mensagem }}</span>
+          </div>
+          </form>
         </div>
 
-        <div class="form-group mt-2">
-          <label for="telefone">Telefone:</label>
-          <input type="text" class="form-control" name="telefone" [(ngModel)]="usuario.telefone" required>
-        </div>
-
-        <div class="form-group mt-2">
-          <label for="cpf">CPF:</label>
-          <input type="text" class="form-control" name="cpf" [(ngModel)]="usuario.cpf" required>
-        </div>
-
-        <button type="submit" class="btn btn-primary mt-4 mr-4">Atualizar</button>
-        <button type="button" routerLink="/perfil" class="btn btn-primary mt-4">Voltar</button>
-
-        <div
-        *ngIf="mensagem"
-        class="alert alert-dismissible fade show"
-        [ngClass]="{
-          'alert-success': tipoMensagem === 'success',
-          'alert-danger': tipoMensagem === 'danger'
-        }"
-        role="alert"
-      >
-        <span>{{ mensagem }}</span>
       </div>
-      </form>
+
     </div>
   </div>
 </div>

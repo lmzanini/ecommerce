@@ -3,25 +3,49 @@
 
   <div class="row my-3">
     <div class="col">
+
       <div class="input-group">
+
+        <button class="btn btn-outline-secondary filter" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          <i class="fa-solid fa-filter"></i>
+        </button>
+
+
         <input type="text" class="form-control form-control-sm" placeholder="Pesquisar produtos pelo nome" [(ngModel)]="nomeProduto" (keyup.enter)="buscarProdutos()">
         <div class="input-group-append">
-
-          <button class="btn btn-outline-secondary filter" type="button" (click)="buscarProdutos()">
-            <i class="fa-solid fa-filter"></i>
-          </button>
 
           <button class="btn btn-outline-secondary" type="button" (click)="buscarProdutos()">
             <i class="fas fa-search"></i>
           </button>
 
         </div>
+
+        <!-- <div class="collapse row border mt-4 container rounded shadow bg-dark center pt-4 pb-4" id="collapseExample" >
+          <div class="col-md-3 text-center border-end" *ngFor="let categoria of categorias">
+              <a  class="nav-link">{{categoria.nome}}</a>
+          </div>
+        </div> -->
+
+        <div class="collapse row border mt-4 container rounded shadow bg-dark center pt-4 pb-4" id="collapseExample">
+          <div class="col-md-3 text-center border-end">
+            <a class="nav-link" (click)="filtrarTodos()">Todos</a>
+          </div>
+          <div class="col-md-3 text-center border-end" *ngFor="let categoria of categorias">
+
+            <a class="nav-link" (click)="filtrarProdutos(categoria.id_categorias)">{{categoria.nome}}</a>
+          </div>
+        </div>
+
+
       </div>
+
+
+
     </div>
   </div>
 
   <div class="row">
-    <div class="col-md-3 mb-4" *ngFor="let produto of produtos">
+    <div class="col-md-3 mb-4 mt-4" *ngFor="let produto of produtos">
       <div class="card bg-dark text-white h-100">
         <img [src]="produto.imagens && produto.imagens[0]" class="card-img-top img-produto" alt="Imagem do Produto">
 
@@ -54,16 +78,3 @@
 
 
   </div>
-
-
-</div>
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Dropdown button
-  </button>
-  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#">Action</a></li>
-    <li><a class="dropdown-item" href="#">Another action</a></li>
-    <li><a class="dropdown-item" href="#">Something else here</a></li>
-  </ul>
-</div>

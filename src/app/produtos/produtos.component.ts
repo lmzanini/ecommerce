@@ -1,6 +1,8 @@
+import { Categoria } from 'src/interfaces/produto/categoria.model';
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { CategoriaService } from 'src/services/produto/categoria.service';
 
 
 @Component({
@@ -10,12 +12,15 @@ import { Router } from '@angular/router';
 })
 export class ProdutosComponent {
   produtos!: any[];
+
+  categorias!: Categoria[];
+
   nomeProduto: string = '';
   totalProdutos: number = 0;
   totalPages: number = 0;
   maxPages = 5; // exibe no máximo 5 páginas na paginação
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router, private categoriaService: CategoriaService) {}
 
   // declara uma variável para armazenar o número da página atual
   currentPage = 1;
@@ -26,12 +31,14 @@ export class ProdutosComponent {
   // declara uma função que atualiza a lista de produtos com base na página atual
   getProdutos() {
     this.isLoading = true;
-    this.http.get<any>(`http://localhost:3000/produtos/listar?page=${this.currentPage}`).subscribe(response => {
+    this.http.get<any>(`http://localhost:3000/produtos/listarAtivos?page=${this.currentPage}`).subscribe(response => {
       this.produtos = response.produtos;
       this.totalPages = response.totalPages;
       console.log(this.totalPages);
+      console.log(response.produtos);
 
       this.totalProdutos = response.totalProdutos;
+
       this.isLoading = false;
     });
   }
@@ -39,9 +46,16 @@ export class ProdutosComponent {
   // chama a função getProdutos() na inicialização do componente para buscar a primeira página de produtos
   ngOnInit() {
     this.getProdutos();
+    this.getCategorias();
   }
 
+  getCategorias() {
+    this.categoriaService.listarCategorias().subscribe(response => {
+      this.categorias = response;
 
+      console.log(response)
+    });
+  }
 
   goToNextPage() {
     if (this.currentPage < this.totalPages) {
@@ -94,4 +108,28 @@ export class ProdutosComponent {
       this.router.navigate(['/produto-id'], { state: { produto: data } });
     });
 }
+
+getProdutosByCategoriaId(id: number, page: number) {
+  this.isLoading = true;
+  this.http.get<any>(`http://localhost:3000/produtos/categoria/${id}?page=${page}`).subscribe(response => {
+    this.produtos = response.produtos;
+    this.totalPages = response.totalPages;
+    console.log(this.totalPages);
+    console.log(response.produtos);
+
+    this.totalProdutos = response.totalProdutos;
+
+    this.isLoading = false;
+  });
+}
+
+filtrarProdutos(idCategoria?: number) {
+  this.getProdutosByCategoriaId(idCategoria ?? 0, 1);
+}
+
+filtrarTodos(){
+  this.buscarProdutos()
+}
+
+
 }

@@ -17,7 +17,21 @@
 
 }
 .filter{
-  border-radius: 0 0px 0px 0;
+  border-radius: 5px 0px 0px 5px;
   border-right: none;
 }
 
+a{
+  color: #BC8B3F;
+  cursor: pointer;
+}
+
+a:hover{
+  color: #fff;
+
+}
+
+.border-end :last-child
+{
+  border-right: none !important;
+}

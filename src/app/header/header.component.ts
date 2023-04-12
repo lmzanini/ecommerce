@@ -1,10 +1,9 @@
-import { Component, OnInit, AfterViewInit} from '@angular/core';
+import { Component} from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/interfaces/usuarios/usuario.model';
 import { Categoria } from 'src/interfaces/produto/categoria.model';
 import { CategoriaService } from 'src/services/produto/categoria.service';
-declare var $: any;
 
 @Component({
   selector: 'app-header',
@@ -51,10 +50,6 @@ export class HeaderComponent {
     });
   }
 
-  ngAfterViewInit() {
-    $(document).ready(() => {
-      $('.dropdown-toggle').dropdown();
-    });
-  }
+
 
 }

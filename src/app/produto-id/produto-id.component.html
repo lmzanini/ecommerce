@@ -4,7 +4,7 @@
       <div id="carouselExampleControls" class="carousel slide shadow" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item" *ngFor="let imagem of produto.imagens; let i = index" [class.active]="i === 0">
-            <img [src]="imagem" class="d-block img-produto" alt="Imagem {{i + 1}}">
+            <img [src]="imagem" class="d-block img-produto border border-5 " alt="Imagem {{i + 1}}">
           </div>
         </div>
         <button *ngIf="produto.imagens.length > 1" class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
