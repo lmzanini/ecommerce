@@ -1,0 +1,37 @@
+<div class="col-md-3 bg-dark w-100">
+  <ul class="nav flex-column">
+
+    <li class="nav-item border-bottom ">
+      <a class="nav-link" data-bs-toggle="collapse" href="#produtos" role="button" aria-expanded="false" aria-controls="produtos">Perfil</a>
+      <div class="collapse bg-light" id="produtos">
+        <ul class="nav flex-column ml-3">
+
+          <li class="nav-item border-top">
+            <a class="nav-link" routerLink="/atualizar-perfil">Atualizar perfil</a>
+          </li>
+
+          <li class="nav-item border-top">
+            <a class="nav-link" routerLink="/esqueci-minha-senha">Trocar senha</a>
+          </li>
+
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item border-bottom ">
+      <a class="nav-link" data-bs-toggle="collapse" href="#usuarios" role="button" aria-expanded="false" aria-controls="usuarios">Endereço</a>
+      <div class="collapse bg-light" id="usuarios">
+        <ul class="nav flex-column ml-3">
+
+          <li class="nav-item border-top">
+            <a class="nav-link" (click)="navegarParaEnderecoSelecionado()">Atualizar/Cadastrar endereço</a>
+          </li>
+
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Pedidos</a>
+    </li>
+
+  </ul>
+</div>

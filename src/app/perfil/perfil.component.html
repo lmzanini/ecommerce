@@ -1,0 +1,65 @@
+<div class="container-fluid ">
+  <div class="row">
+    <div class="col-md-3 p-0">
+      <app-menu-lateral-cliente></app-menu-lateral-cliente>
+    </div>
+
+    <div class="col-md-7 pl-md-3 mt-4 mx-auto vh-100">
+      <div class="row">
+
+        <div class="col-md-10 pl-md-3 mt-4 mx-auto">
+          <div class="card shadow">
+
+            <div class="card-header text-center">
+              <h3>Meu perfil <i class="fa-solid fa-circle-user"></i></h3>
+            </div>
+
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <p><strong>Nome:</strong> {{ usuario.nome_completo }}</p>
+                  <p><strong>Email:</strong> {{ usuario.email }}</p>
+                </div>
+                <div class="col-md-6">
+                  <p><strong>Telefone:</strong> {{ usuario.telefone }}</p>
+                  <p><strong>CPF:</strong> {{ usuario.cpf }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card shadow mt-4">
+            <div class="card-header text-center">
+              <h3>Endereço <i class="fa-solid fa-map-location-dot"></i></h3>
+            </div>
+
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <p><strong>Cep:</strong> {{ usuario.cep }}</p>
+                  <p><strong>País:</strong> {{ usuario.pais }}</p>
+                  <p><strong>Estado:</strong> {{ usuario.estado }}</p>
+                  <p><strong>Cidade:</strong> {{ usuario.cidade }}</p>
+                  <p><strong>Bairro:</strong> {{ usuario.bairro }}</p>
+                </div>
+                <div class="col-md-6">
+                  <p><strong>Número:</strong> {{ usuario.logradouro }}</p>
+                  <p><strong>Número:</strong> {{ usuario.numero }}</p>
+                  <p><strong>Complemento:</strong> {{ usuario.complemento }}</p>
+                  <p><strong>Ponto de referência:</strong> {{ usuario.ponto_referencia }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  </div>
+

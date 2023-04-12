@@ -1,0 +1,205 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3 p-0">
+      <app-menu-lateral-cliente></app-menu-lateral-cliente>
+    </div>
+
+    <div class="col-md-7 pl-md-3 mt-4 mx-auto">
+
+      <div class="card shadow mt-4 mb-4">
+
+        <div class="card-header text-center">
+          <h2 class="text-center">Atualizar endereço</h2>
+        </div>
+
+        <div class="card-body">
+          <form
+          class="mx-auto mt-2"
+          (submit)="atualizarEndereco()"
+        >
+
+        <div class="row">
+
+          <div class="col-md-4">
+            <div class="form-group mt-2">
+              <label for="cep" class="label-size">Cep:</label>
+              <input class="form-control input-size" type="text" name="cep" [(ngModel)]="endereco.cep" required #cep="ngModel"
+                     [ngClass]="{ 'is-invalid': cep.invalid && (cep.dirty || cep.touched) }">
+              <div class="invalid-feedback">Campo obrigatório.</div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="form-group mt-2">
+              <label for="pais" class="label-size">País:</label>
+              <input class="form-control input-size" type="text" name="pais" [(ngModel)]="endereco.pais" required #pais="ngModel"
+                     [ngClass]="{ 'is-invalid': pais.invalid && (pais.dirty || pais.touched) }">
+              <div class="invalid-feedback">Campo obrigatório.</div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="form-group mt-2">
+              <label for="estado" class="label-size">Estado:</label>
+              <input class="form-control input-size estado" type="text" name="estado" [(ngModel)]="endereco.estado" required #estado="ngModel"
+                [ngClass]="{ 'is-invalid': estado.invalid && (estado.dirty || estado.touched) }">
+              <div class="invalid-feedback">Campo obrigatório.</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+            <div class="form-group mt-2">
+              <label for="cidade">Cidade</label>
+              <input
+                class="form-control"
+                type="text"
+                name="cidade"
+                [ngModel]="endereco.cidade"
+                (ngModelChange)="endereco.cidade"
+                required
+                #cidade="ngModel"
+                [ngClass]="{
+                  'is-invalid': cidade.invalid && (cidade.dirty || cidade.touched)
+                }"
+              />
+              <div class="invalid-feedback">Campo obrigatório.</div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group mt-2">
+              <label for="bairro">Bairro:</label>
+              <input
+                class="form-control"
+                type="text"
+                name="bairro"
+                [(ngModel)]="endereco.bairro"
+                [ngModel]="endereco.bairro"
+                (ngModelChange)="endereco.bairro"
+                required
+                #bairro="ngModel"
+                [ngClass]="{
+                  'is-invalid': bairro.invalid && (bairro.dirty || bairro.touched)
+                }"
+              />
+              <div class="invalid-feedback">Campo obrigatório.</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-10">
+            <div class="form-group mt-2">
+              <label for="logradouro">Logradouro:</label>
+              <input
+                class="form-control"
+                type="text"
+                name="logradouro"
+                [(ngModel)]="endereco.logradouro"
+                [ngModel]="endereco.logradouro"
+                (ngModelChange)="endereco.logradouro"
+                required
+                #logradouro="ngModel"
+                [ngClass]="{
+                  'is-invalid': logradouro.invalid && (logradouro.dirty || logradouro.touched)
+                }"
+              />
+              <div class="invalid-feedback">Campo obrigatório.</div>
+            </div>
+          </div>
+
+          <div class="col-md-2">
+            <div class="form-group mt-2">
+              <label for="numero">Número:</label>
+              <input
+                class="form-control"
+                type="text"
+                name="numero"
+                [(ngModel)]="endereco.numero"
+                [ngModel]="endereco.numero"
+                (ngModelChange)="endereco.numero"
+                required
+                #numero="ngModel"
+                [ngClass]="{
+                  'is-invalid': numero.invalid && (numero.dirty || numero.touched)
+                }"
+              />
+              <div class="invalid-feedback">Campo obrigatório.</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="form-group mt-6">
+            <div class="form-group mt-2">
+              <label for="complemento">Complemento:</label>
+              <input
+                class="form-control"
+                type="text"
+                name="complemento"
+                [(ngModel)]="endereco.complemento"
+                [ngModel]="endereco.complemento"
+                (ngModelChange)="endereco.complemento"
+                required
+                #complemento="ngModel"
+                [ngClass]="{
+                  'is-invalid': complemento.invalid && (complemento.dirty || complemento.touched)
+                }"
+              />
+              <div class="invalid-feedback">Campo obrigatório.</div>
+            </div>
+          </div>
+
+          <div class="form-group mt-6">
+            <div class="form-group mt-2">
+              <label for="ponto_referencia">Ponto de referência:</label>
+              <input
+                class="form-control"
+                type="text"
+                name="ponto_referencia"
+                [(ngModel)]="endereco.ponto_referencia"
+                [ngModel]="endereco.ponto_referencia"
+                (ngModelChange)="endereco.ponto_referencia"
+                required
+                #ponto_referencia="ngModel"
+                [ngClass]="{
+                  'is-invalid': ponto_referencia.invalid && (ponto_referencia.dirty || ponto_referencia.touched)
+                }"
+              />
+              <div class="invalid-feedback">Campo obrigatório.</div>
+            </div>
+          </div>
+
+        </div>
+
+          <button type="submit" class="btn btn-primary mt-4 mb-4">
+            Atualizar
+          </button>
+
+          <div
+            *ngIf="mensagem"
+            class="alert alert-dismissible fade show"
+            [ngClass]="{
+              'alert-success': tipoMensagem === 'success',
+              'alert-danger': tipoMensagem === 'danger'
+            }"
+            role="alert"
+          >
+            <span>{{ mensagem }}</span>
+          </div>
+        </form>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>

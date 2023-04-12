@@ -1,0 +1,32 @@
+<div class="container-fluid vh-100">
+  <div class="row">
+    <div class="col-md-3 p-0">
+      <app-menu-lateral></app-menu-lateral>
+    </div>
+
+    <div class="col-md-9 pl-md-3 mt-4">
+      <h2 class="text-center">Atualizar Categoria</h2>
+      <form class="mx-auto" style="max-width: 600px;" (submit)="atualizarCategoria()">
+        <div class="form-group">
+          <label for="nome">Nome:</label>
+          <input class="form-control" type="text" name="nome" [(ngModel)]="categoria.nome" required>
+          <!-- <span>{{ categoria.nome }}</span> -->
+        </div>
+        <button type="submit" class="btn btn-primary mt-4 mb-4">Atualizar</button>
+        <div
+        *ngIf="mensagem"
+        class="alert alert-dismissible fade show"
+        [ngClass]="{
+          'alert-success': tipoMensagem === 'success',
+          'alert-danger': tipoMensagem === 'danger'
+        }"
+        role="alert"
+      >
+        <span>{{ mensagem }}</span>
+      </div>
+      </form>
+
+
+    </div>
+  </div>
+</div>

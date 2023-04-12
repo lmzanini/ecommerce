@@ -1,0 +1,64 @@
+<div class="container-fluid ">
+  <div class="row">
+    <div class="col-md-3 p-0">
+      <app-menu-lateral></app-menu-lateral>
+    </div>
+
+    <div class="col-md-7 pl-md-3 mt-4 mx-auto">
+      <h2 class="text-center">Lista de Produtos</h2>
+
+
+      <div class="table-responsive mt-4">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th class="col-1 text-center">Foto</th>
+              <th class="col-1 text-center">ID</th>
+              <th class="col-2 text-center">Nome</th>
+              <th class="col-2 text-center">Preço</th>
+              <th class="col-2 text-center">Desconto</th>
+              <th class="col-2 text-center">Preço Atual</th>
+              <th class="col-2 text-center">Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let produto of produtos">
+              <td class="align-middle text-center border-bottom"><img [src]="produto.imagens[0]" alt="{{produto.nome}}" class="rounded-4 p-0" style="max-height: 90px;"></td>
+              <td class="align-middle text-center border-bottom">{{produto.id}}</td>
+              <td class="align-middle text-center border-bottom">{{produto.nome}}</td>
+              <td class="align-middle text-center border-bottom">{{produto.valor | currency:'BRL'}}</td>
+              <td class="align-middle text-center border-bottom">{{produto.desconto | currency:'BRL'}}</td>
+              <td class="align-middle text-center border-bottom">{{produto.valor_atual | currency:'BRL'}}</td>
+
+              <td class="align-middle text-center border-bottom mx-auto">
+                <button class="btn btn-danger btn-md m-2" (click)="deletarProduto(produto.id)">
+                  <i class="fas fa-trash"></i>
+                </button>
+                <button class="btn btn-primary btn-md mr-2" (click)="navegarParaProdutoSelecionado(produto.id)">
+                  <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+
+              </td>
+
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+      <div class="text-center">
+        <button class="btn btn-secondary" [disabled]="currentPage === 1 || isLoading" (click)="goToPreviousPage()">Anterior</button>
+        <ng-container *ngFor="let page of generatePagesArray()">
+          <button class="btn btn-secondary m-2" [disabled]="currentPage === page || isLoading" (click)="goToPage(page)">{{ page }}</button>
+        </ng-container>
+        <button class="btn btn-secondary" [disabled]="currentPage === totalPages || isLoading" (click)="goToNextPage()">Próxima</button>
+
+
+      </div>
+
+
+
+
+    </div>
+  </div>
+</div>

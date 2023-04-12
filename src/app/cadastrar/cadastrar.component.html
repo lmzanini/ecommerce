@@ -1,0 +1,152 @@
+<div class="container-fluid vh-100">
+  <div class="row">
+
+
+    <div class="col-md-6 pl-md-3 mt-4 mx-auto">
+      <div class="card shadow">
+
+        <div class="card-header text-center">
+          <div class="d-flex justify-content-center">
+            <h3>Cadastrar <i class="fa-solid fa-circle-user"></i></h3>
+          </div>
+        </div>
+
+
+        <div class="card-body p-5">
+          <form
+          [formGroup]="cadastroForm"
+          class="mx-auto mt-2"
+          (submit)="onSubmit()"
+          style="max-width: 600px"
+        >
+
+        <div class="form-group mt-2">
+          <label for="nome_completo">Nome:</label>
+          <input
+            class="form-control"
+            type="text"
+            formControlName="nome_completo"
+            required
+            [ngClass]="{
+              'is-invalid': cadastroForm.get('nome_completo')?.invalid && (cadastroForm.get('nome_completo')?.dirty || cadastroForm.get('nome_completo')?.touched)
+            }"
+          />
+          <div class="invalid-feedback">Campo obrigatório.</div>
+        </div>
+
+
+          <div class="form-group mt-2">
+            <label for="email">E-mail:</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              formControlName="email"
+              required
+              [ngClass]="{
+                'is-invalid': cadastroForm.get('email')?.invalid && (cadastroForm.get('email')?.dirty || cadastroForm.get('email')?.touched)
+              }"
+            />
+            <div class="invalid-feedback">Campo obrigatório.</div>
+          </div>
+
+          <div class="form-group mt-2">
+            <label for="senha">Senha:</label>
+            <input
+              type="password"
+              class="form-control"
+              id="senha"
+              name="senha"
+              formControlName="senha"
+              required
+              [ngClass]="{
+                'is-invalid': cadastroForm.get('senha')?.invalid && (cadastroForm.get('senha')?.dirty || cadastroForm.get('senha')?.touched)
+              }"
+            />
+            <div class="invalid-feedback">Campo obrigatório.</div>
+          </div>
+          <div class="form-group mt-2">
+            <label for="telefone">Whatsapp:</label>
+            <input
+              type="tel"
+              class="form-control"
+              id="telefone"
+              name="telefone"
+              formControlName="telefone"
+              required
+              [ngClass]="{
+                'is-invalid': cadastroForm.get('telefone')?.invalid && (cadastroForm.get('telefone')?.dirty || cadastroForm.get('telefone')?.touched)
+              }"
+            />
+            <div class="invalid-feedback">Campo obrigatório.</div>
+          </div>
+
+          <div class="form-group mt-2">
+            <label for="cpf">CPF:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="cpf"
+              name="cpf"
+              formControlName="cpf"
+              required
+              [ngClass]="{
+                'is-invalid': cadastroForm.get('senha')?.invalid && (cadastroForm.get('senha')?.dirty || cadastroForm.get('senha')?.touched)
+              }"
+            />
+            <div class="invalid-feedback">Campo obrigatório.</div>
+          </div>
+
+          <div class="form-group mt-2">
+            <label for="pergunta_secreta">Pergunta Secreta:</label>
+            <select class="form-control" id="pergunta_secreta" name="usuario.pergunta_secreta" formControlName="pergunta_secreta">
+              <option value="">Escolha uma pergunta secreta</option>
+              <option value="Qual é o nome do seu melhor amigo de infância?">Qual é o nome do seu melhor amigo de infância?</option>
+              <option value="Qual é o nome da cidade onde você nasceu?">Qual é o nome da cidade onde você nasceu?</option>
+              <option value="Qual é o nome do seu primeiro animal de estimação?">Qual é o nome do seu primeiro animal de estimação?</option>
+              <option value="Qual é o nome da rua onde você morava na infância?">Qual é o nome da rua onde você morava na infância?</option>
+              <option value="Qual é o nome da sua escola primária?">Qual é o nome da sua escola primária?</option>
+              <option value="Qual é o nome do seu avô paterno?">Qual é o nome do seu avô paterno?</option>
+              <option value="Qual é o nome do seu time esportivo favorito?">Qual é o nome do seu time esportivo favorito?</option>
+              <option value="Qual é o nome do seu personagem favorito de um livro ou filme?">Qual é o nome do seu personagem favorito de um livro ou filme?</option>
+              <option value="Qual é o nome do primeiro carro que você dirigiu?">Qual é o nome do primeiro carro que você dirigiu?</option>
+              <option value="Qual é o nome do seu restaurante favorito?">Qual é o nome do seu restaurante favorito?</option>
+            </select>
+          </div>
+
+
+          <div class="form-group mt-2">
+            <label for="resposta_secreta">Resposta Secreta:</label>
+            <input
+              class="form-control"
+              type="text"
+              formControlName="resposta_secreta"
+              required
+              [ngClass]="{
+                'is-invalid': cadastroForm.get('resposta_secreta')?.invalid && (cadastroForm.get('resposta_secreta')?.dirty || cadastroForm.get('resposta_secreta')?.touched)
+              }"
+            />
+            <div class="invalid-feedback">Campo obrigatório.</div>
+          </div>
+
+          <button type="submit" class="btn btn-primary mt-4">Cadastrar</button>
+
+          <div
+          *ngIf="mensagem"
+          class="alert alert-dismissible fade show"
+          [ngClass]="{
+            'alert-success': tipoMensagem === 'success',
+            'alert-danger': tipoMensagem === 'danger'
+          }"
+          role="alert"
+        >
+          <span>{{ mensagem }}</span>
+        </div>
+        </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

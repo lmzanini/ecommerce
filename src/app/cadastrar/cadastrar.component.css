@@ -1,0 +1,11 @@
+.card-header{
+  background: rgba(188, 139, 63, 1);
+}
+.form-control:focus{
+  border-color: rgba(188, 139, 63, 1);
+}
+.form-group select:focus{
+  border-color: #BC8B3F !important;
+  box-shadow: 0 0 0 0.2rem rgba(188, 139, 63, 0.25) !important;
+  outline: 0;
+}

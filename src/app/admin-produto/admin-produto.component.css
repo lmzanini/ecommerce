@@ -1,0 +1,59 @@
+.form-group input:focus{
+  border-color: #BC8B3F !important;
+  box-shadow: 0 0 0 0.2rem rgba(188, 139, 63, 0.25) !important;
+  outline: 0;
+}
+
+.form-group textarea:focus{
+  border-color: #BC8B3F !important;
+  box-shadow: 0 0 0 0.2rem rgba(188, 139, 63, 0.25) !important;
+  outline: 0;
+}
+
+.form-group select:focus{
+  border-color: #BC8B3F !important;
+  box-shadow: 0 0 0 0.2rem rgba(188, 139, 63, 0.25) !important;
+  outline: 0;
+}
+
+.form-group option:hover{
+  background-color: #BC8B3F;
+}
+
+/* estilo padrão do checkbox */
+.form-check-input.custom-control-input[type="checkbox"] {
+  background-color: white;
+  border-color: #BC8B3F !important;
+}
+
+/* estilo do checkbox quando selecionado */
+.form-check-input.custom-control-input[type="checkbox"]:checked {
+  background-color: #BC8B3F !important;
+}
+
+.form-check-input.custom-control-input[type="checkbox"]:focus {
+  outline: none;
+  box-shadow: 0 0 8px 2px rgba(188, 139, 63, 0.25);
+  border-color: #BC8B3F !important;
+}
+
+#categoria:focus, #especificacoes:focus, #descricao:focus, #descricao_curta:focus{
+  border-color: #BC8B3F !important;
+  box-shadow: 0 0 0 0.2rem rgba(188, 139, 63, 0.25) !important;
+}
+
+select option:focus {
+  background-color: #BC8B3F;
+  color: white;
+}
+
+
+.lista-categoria{
+  padding: 0.3rem 0.5rem;
+  margin: 0.5rem 0.2rem;
+  background-color: #BC8B3F;
+  color: #fff;
+  border-radius: 0.5rem;
+  text-align: center;
+  text-justify: auto;
+}

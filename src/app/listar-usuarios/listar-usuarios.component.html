@@ -1,0 +1,89 @@
+<div class="container-fluid ">
+  <div class="row">
+    <div class="col-md-3 p-0">
+      <app-menu-lateral></app-menu-lateral>
+    </div>
+
+    <div class="col-md-7 pl-md-3 mt-4 mx-auto">
+      <h2 class="text-center">Lista de Usuários</h2>
+
+      <div class="row">
+        <div class="col-md-12">
+          <form (ngSubmit)="buscarUsuarioPorNome(nome.value)">
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Buscar usuário por nome" #nome>
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="submit">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="table-responsive mt-4">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th class="col-1 text-center">ID</th>
+              <th class="col-2 text-center">E-mail</th>
+              <th class="col-2 text-center">Whatsapp</th>
+              <th class="col-2 text-center">Nome</th>
+              <th class="col-2 text-center">CPF</th>
+              <th class="col-2 text-center">Admin</th>
+              <th class="col-2 text-center">Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let usuario of usuarios">
+              <td class="align-middle text-center border-bottom">{{usuario.id_usuarios}}</td>
+              <td class="align-middle text-center border-bottom">{{usuario.email}}</td>
+              <td class="align-middle text-center border-bottom">{{usuario.telefone}}</td>
+              <td class="align-middle text-center border-bottom">{{usuario.nome_completo}}</td>
+              <td class="align-middle text-center border-bottom">{{usuario.cpf}}</td>
+              <td class="align-middle text-center border-bottom">
+                <span *ngIf="usuario.admin === 1">Sim</span>
+                <span *ngIf="usuario.admin === 0">Não</span>
+              </td>
+
+              <td class="align-middle text-center border-bottom mx-auto">
+
+                <button class="btn btn-danger btn-md m-2" (click)="deletarUsuario(usuario?.id_usuarios ?? 0)">
+                  <i class="fas fa-trash"></i>
+                </button>
+
+                <button class="btn btn-primary btn-md m-2" (click)="navegarParaUsuarioSelecionado(usuario?.id_usuarios ?? 0)">
+                  <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+
+                
+                <button class="btn btn-primary btn-md m-2" (click)="navegarParaEnderecoSelecionado(usuario?.id_usuarios ?? 0)">
+                  <i class="fa-solid fa-map-location-dot"></i>
+                </button>
+
+              </td>
+
+
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+      <div class="text-center">
+        <button class="btn btn-secondary" [disabled]="currentPage === 1 || isLoading" (click)="goToPreviousPage()">Anterior</button>
+        <ng-container *ngFor="let page of generatePagesArray()">
+          <button class="btn btn-secondary m-2" [disabled]="currentPage === page || isLoading" (click)="goToPage(page)">{{ page }}</button>
+        </ng-container>
+        <button class="btn btn-secondary" [disabled]="currentPage === totalPages || isLoading" (click)="goToNextPage()">Próxima</button>
+
+
+      </div>
+
+
+
+
+    </div>
+  </div>
+</div>

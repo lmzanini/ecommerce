@@ -1,0 +1,38 @@
+
+.carousel-control-prev-icon {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(281deg) brightness(105%) contrast(100%);
+}
+
+.carousel-control-next-icon {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(281deg) brightness(105%) contrast(100%);
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/* .carousel-control-distance {
+  width: 50%;
+} */
+.img-square {
+  height: 100px;
+  object-fit: cover;
+}
+
+.nome{
+  margin-left: 2rem;
+}
+.container-produtos:hover{
+  box-shadow: 0px 0px 8px 0px rgba(188, 139, 63, 1)!important;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+.img-produto {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+

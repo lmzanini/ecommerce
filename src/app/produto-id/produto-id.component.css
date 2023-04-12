@@ -1,0 +1,34 @@
+.img-produto {
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
+}
+
+/* Defina as classes para as setas esquerda e direita */
+/* .carousel-control-prev-icon {
+  background-image: url('https://example.com/my-left-arrow.png');
+} */
+/* .carousel-control-next-icon:before {
+  content: "\f054";
+} */
+
+/* Defina a cor das setas */
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+ }
+
+ .carousel-control-next-icon {
+   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+ }
+ .p-inline-block {
+  margin-right: 10px;
+}
+.lista-categoria{
+  padding: 0.3rem 0.5rem;
+  margin: 0.5rem 0.2rem;
+  background-color: #BC8B3F;
+  color: #fff;
+  border-radius: 0.5rem;
+  text-align: center;
+  text-justify: auto;
+}

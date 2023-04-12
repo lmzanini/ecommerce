@@ -1,0 +1,71 @@
+<div class="container-fluid h-100">
+  <div class="row h-100">
+    <div
+      class="col-lg-8 bg-esquerdo d-none d-lg-flex flex-column justify-content-center align-items-center"
+    >
+      <!-- Conteúdo para a coluna esquerda -->
+      <img src="assets/images/logo.svg" alt="Logo da empresa Riquirri" />
+    </div>
+
+    <div class="col-lg-4 bg-direito h-100">
+      <form (ngSubmit)="onSubmit()" class="mt-4">
+        <div class="form-group">
+          <h1 class="title-login">Acessar Conta</h1>
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            [(ngModel)]="email"
+            class="form-control form-control-md"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="senha">Senha</label>
+          <input
+            type="password"
+            id="senha"
+            name="senha"
+            [(ngModel)]="senha"
+            class="form-control form-control-md"
+          />
+        </div>
+
+        <div class="form-group flex-column text-center a-senha">
+          <a routerLink="/esqueci-minha-senha">Esqueci minha senha</a>
+        </div>
+
+        <div class="form-group mt-3 d-flex flex-column">
+          <button type="submit" class="btn btn-primary btn-md mt-2 mr-2">
+            Entrar
+          </button>
+
+          <div
+            *ngIf="mensagem"
+            class="alert alert-dismissible fade show"
+            [ngClass]="{
+              'alert-success': tipoMensagem === 'success',
+              'alert-danger': tipoMensagem === 'danger'
+            }"
+            role="alert"
+          >
+            <span>{{ mensagem }}</span>
+          </div>
+
+          <div
+            class="form-group d-flex justify-content-center align-items-center"
+          >
+            <span class="d-inline-block mr-2">Não tem uma conta?</span>
+            <a
+              type="button"
+              routerLink="/cadastrar"
+              class="btn btn-link d-inline-block"
+              >Cadastre-se</a
+            >
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

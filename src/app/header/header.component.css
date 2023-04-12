@@ -1,0 +1,20 @@
+.navbar{
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.logo{
+  /* width: 10vh; */
+  max-height: 50px;
+}
+
+.sair{
+  cursor: pointer;
+}
+
+.dropdown-item:active{
+  background-color: #797979;
+}
+
+.dropdown-menu {
+  max-width: 200px; /* ou outro valor que você preferir */
+}

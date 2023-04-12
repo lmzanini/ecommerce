@@ -1,0 +1,53 @@
+<div class="container my-5 h-100" *ngIf="produto">
+  <div class="row">
+    <div class="col-md-5">
+      <div id="carouselExampleControls" class="carousel slide shadow" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item" *ngFor="let imagem of produto.imagens; let i = index" [class.active]="i === 0">
+            <img [src]="imagem" class="d-block img-produto" alt="Imagem {{i + 1}}">
+          </div>
+        </div>
+        <button *ngIf="produto.imagens.length > 1" class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon " aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button *ngIf="produto.imagens.length > 1" class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon " aria-hidden="true"></span>
+          <span class="visually-hidden">Próximo</span>
+        </button>
+      </div>
+    </div>
+    <div class="col-md-7">
+
+      <h1>{{produto.nome}}</h1>
+      <p class="text-muted">Código do Produto: {{produto.id}}</p>
+      <div *ngIf="produto.desconto > 0; else semDesconto">
+        <p class="lead ">Preço Original: <del>{{produto.valor | currency:'BRL'}}</del></p>
+        <p class="lead ">Desconto: {{produto.desconto | currency:'BRL'}}</p>
+        <p class="lead ">Preço: {{produto.valor_atual | currency:'BRL'}}</p>
+      </div>
+      <ng-template #semDesconto>
+        <p class="lead">Preço: {{produto.valor_atual | currency:'BRL'}}</p>
+      </ng-template>
+      <hr>
+      <p class="text-muted">Categorias:</p>
+      <div>
+        <span *ngFor="let categoria of produto.categorias" class="lista-categoria d-inline-block mr-3">{{ categoria.nome }}</span>
+      </div>
+      <p class="text-muted">Especificações do Produto:</p>
+      <p>{{produto.especificacao}}</p>
+      <p class="text-muted">Descrição do Produto:</p>
+      <p>{{produto.descricao}}</p>
+      <form>
+        <div class="mb-3">
+          <label for="quantidade" class="form-label">Quantidade:</label>
+          <input type="number" class="form-control" id="quantidade" value="1">
+        </div>
+
+          <button type="submit" class="btn btn-primary m-3">Adicionar ao carrinho</button>
+          <button class="btn btn-dark m-3" (click)="voltar()">Voltar</button>
+
+      </form>
+    </div>
+  </div>
+</div>
