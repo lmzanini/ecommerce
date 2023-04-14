@@ -15,6 +15,8 @@ export class HeaderComponent {
   isAdmin: boolean = false;
   usuario!: Usuario;
 
+  showSearch = false;
+  
   categorias!: Categoria[];
 
   constructor(private authService: AuthService, private router: Router, private categoriaService: CategoriaService) {

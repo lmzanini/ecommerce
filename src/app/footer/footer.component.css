@@ -1,6 +1,7 @@
 
 .footer{
   box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.25);
+  background-color: #BC8B3F !important;
 }
 
 .icons-footer a{
@@ -10,4 +11,67 @@
 .icons-footer a:hover{
   color: #797979;
   transition: all ease 0.3s;
+}
+.p-custom{
+  color: #fff;
+}
+hr{
+  color: #fff;
+}
+
+a img{
+  width: 50px;
+  margin: 0.5rem;;
+}
+
+a i{
+  color: #fff;
+  transition: all ease 0.3s;
+}
+a i:hover{
+  color: #000;
+}
+.img-custom{
+  transition: all ease 0.3s;
+  margin: 0.5rem !important;
+  width: 50px !important;
+}
+.img-custom:hover{
+  scale: 1.1;
+}
+
+.img-insta{
+  transition: all ease 0.3s;
+  /* margin: 0.5rem !important; */
+  width: 119px !important;
+  height: 119px !important;
+  padding: 0 !important;
+}
+.img-insta:hover{
+  scale: 1.1;
+}
+
+ul{
+  margin: 0 !important;
+}
+
+.row{
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.reset{
+  margin: 0 !important;
+  padding: 0 !important;
+
+}
+.col-lg-4 {
+  flex: 0 0 0;
+  width: 50%;
+  padding: 0;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.center{
+  place-content: center
 }

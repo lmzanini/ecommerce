@@ -18,3 +18,37 @@
 .dropdown-menu {
   max-width: 200px; /* ou outro valor que você preferir */
 }
+
+.bg-custom{
+  background-color: #BC8B3F;
+}
+.a-custom{
+  color: #fff !important;
+  transition: all ease 0.3s;
+
+}
+
+.a-custom:hover{
+  color: #000 !important;
+}
+
+.custom-i{
+  font-size: 150%;
+}
+
+.custom-i:hover{
+  cursor: pointer;
+}
+
+span{
+  color: #fff;
+}
+.show-search {
+  transition: all 0.5s ease-in-out;
+}
+.btn-outline-secondary{
+  background-color: #fff;
+  /* border: none; */
+  border-radius: 0 5px 5px 0;
+  color: rgba(188, 139, 63, 1);
+}

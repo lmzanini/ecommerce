@@ -1,68 +1,149 @@
 <footer class="footer bg-light py-3">
-  <div class="container">
+  <div class="container align-middle">
     <div class="row">
       <div class="col-md-4">
-        <div class="d-flex flex-column align-items-center my-3">
-          <p>Rua Sergipe, 528 - Centro</p>
-          <p>Londrina - Paraná</p>
+
+        <div class="mb-4 text-center">
+          <span class="fs-3"><strong>Contato</strong></span>
         </div>
-      </div>
-      <div class="col-md-4 icons-footer">
-        <div class="d-flex flex-column align-items-center my-3">
-          <ul class="list-unstyled d-flex">
-            <li class="justify-content-between">
-              <a
-                href="https://www.instagram.com/useriquirri"
-                target="_blank"
-                class="d-inline-block mx-3"
-                ><i class="fab fa-instagram fa-3x"></i
-              ></a>
-              <a
-                href="https://www.facebook.com/useriquirri"
-                target="_blank"
-                class="d-inline-block mx-3"
-                ><i class="fab fa-facebook-square fa-3x"></i
-              ></a>
-              <a
-                href="https://www.tiktok.com/@useriquirri?lang=pt_BR"
-                target="_blank"
-                class="d-inline-block mx-3"
-                ><i class="fab fa-tiktok fa-3x"></i
-              ></a>
-              <a
-                href="https://wa.me/+554391825757"
-                target="_blank"
-                class="d-inline-block mx-3"
-                ><i class="fab fa-whatsapp fa-3x"></i
-              ></a>
-            </li>
-          </ul>
-          <p>E-mail: contato@sualoja.com.br</p>
+
+        <div class="d-flex flex-column my-3">
+          <p class="p-custom fs-4"><i class="fa-solid fa-envelope"></i> useriquirri@gmail.com</p>
+          <p class="p-custom fs-4"><i class="fa-brands fa-square-whatsapp"></i> 43 9182-5757</p>
         </div>
       </div>
 
-      <div class="col-md-4 icons-footer">
-        <div class="d-flex flex-column align-items-center my-3">
-          <ul class="list-unstyled d-flex">
-            <li class="justify-content-between">
-              <a routerLink="#">
-                <i class="fab fa-cc-visa fa-3x mx-3"></i>
-              </a>
-              <a routerLink="#">
-                <i class="fab fa-cc-mastercard fa-3x mx-3"></i>
-              </a>
-              <a routerLink="#">
-                <i class="fab fa-cc-paypal fa-3x mx-3"></i>
-              </a>
-            </li>
-          </ul>
+      <div class="col-md-4 ">
+
+        <div class="mb-4 text-center">
+          <span class="fs-3"><strong>Endereço</strong></span>
+        </div>
+
+        <div class="d-flex flex-column align-items-center my-3 text-center border-start border-end">
+          <iframe
+            class="shadow rounded"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d229.01022174227953!2d-51.15803254047479!3d-23.30982416633814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94eb449f8e7c3fc5%3A0x730e555c1f38690!2sR.%20Sergipe%2C%20528%20-%20Centro%2C%20Londrina%20-%20PR%2C%2087702-350!5e0!3m2!1spt-BR!2sbr!4v1681476866834!5m2!1spt-BR!2sbr"
+            width="300"
+            height="225"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+          <p class="p-custom fs-4">Rua Sergipe, 528 - Centro</p>
+          <p class="p-custom fs-4">Londrina - Paraná</p>
+        </div>
+      </div>
+
+      <div class="col-md-4 ">
+
+        <div class="mb-4 text-center">
+          <span class="fs-3"><strong>Instagram</strong></span>
+        </div>
+
+        <div class="row row-cols-lg-3 center">
+          <div
+            class="col-lg-4"
+            *ngFor="let media of mediaData.slice(0, 9)"
+          >
+          <a [href]="media.permalink" target="_blank">
+            <img
+              [src]="media.media_url"
+              class="img-insta reset"
+              alt="Imagem do Produto"
+            />
+          </a>
+
+          </div>
         </div>
       </div>
 
     </div>
     <hr />
-    <div class="text-center">
-      <p>Todos os direitos reservados &copy; 2023 - Riquirri</p>
+
+    <div class="row">
+      <div class="col-md-4 d-flex justify-content-center align-items-center">
+        <span class="text-center fs-3"><strong>Redes Sociais</strong></span>
+      </div>
+
+      <div class="col-md-4 d-flex justify-content-center align-items-center ">
+        <div class="d-flex flex-column align-items-center">
+          <ul class="list-unstyled d-flex justify-content-center">
+            <li class="justify-content-between">
+              <a
+                href="https://www.instagram.com/useriquirri"
+                target="_blank"
+                class="d-inline-block mx-3 img-custom"
+                ><img src="../../assets/images/insta.svg" alt=""
+              /></a>
+              <a
+                href="https://www.facebook.com/useriquirri"
+                target="_blank"
+                class="d-inline-block mx-3 img-custom"
+                ><img src="../../assets/images/face.svg" alt=""
+              /></a>
+              <a
+                href="https://www.tiktok.com/@useriquirri?lang=pt_BR"
+                target="_blank"
+                class="d-inline-block mx-3 img-custom"
+                ><img src="../../assets/images/tiktok.svg" alt=""
+              /></a>
+              <a
+                href="https://wa.me/+554391825757"
+                target="_blank"
+                class="d-inline-block mx-3 img-custom"
+                ><img src="../../assets/images/wpp.png" alt=""
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
     </div>
+
+    <hr />
+
+    <div class="row ">
+      <div class="col-md-4 d-flex justify-content-center align-items-center">
+        <span class="text-start fs-3"
+          ><strong>Formas de Pagamento</strong></span
+        >
+      </div>
+
+      <div class="col-4">
+        <ul class="list-unstyled d-flex justify-content-center">
+          <li class="justify-content-between justify-content-center">
+            <a routerLink="#">
+              <img src="../../assets/images/cartao-visa.svg" />
+            </a>
+
+            <a routerLink="#">
+              <img src="../../assets/images/cartao-master.svg" />
+            </a>
+
+            <a routerLink="#">
+              <img src="../../assets/images/cartao-hipercard.svg" />
+            </a>
+
+            <a routerLink="#">
+              <img src="../../assets/images/cartao-elo.svg" />
+            </a>
+
+            <a routerLink="#">
+              <img src="../../assets/images/cartao-amex.svg" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <hr />
+    <div class="text-center">
+      <p class="p-custom">
+        Todos os direitos reservados &copy; 2023 - Riquirri
+      </p>
+    </div>
+
   </div>
 </footer>

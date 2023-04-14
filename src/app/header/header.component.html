@@ -1,8 +1,10 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
+<nav class="navbar navbar-expand-lg navbar-light bg-custom">
+  <div class="container-fluid col-8">
+
     <a class="navbar-brand" href="/home">
-      <img class="logo" src="assets/images/logo.svg" alt="" />
+      <img class="logo" src="assets/images/logo.svg" alt="Use Riquirri" />
     </a>
+
     <button
       class="navbar-toggler"
       type="button"
@@ -14,25 +16,59 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
+      <ul class="navbar-nav navbar-start">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/home">Home</a>
+          <a class="nav-link active a-custom" aria-current="page" routerLink="/produtos">Produtos</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/produtos">Produtos</a>
+          <a class="nav-link active a-custom" aria-current="page" routerLink="/quem-somos">Quem somos</a>
+        </li>
+      </ul>
+
+      <span class="mx-auto ">Elegância, Beleza e Auto Cuidado</span>
+
+      <ul class="navbar-nav navbar-end ms-auto">
+
+        <li class="nav-item">
+          <a class="nav-link a-custom">
+            <i class="fa-solid fa-search custom-i" (click)="showSearch = !showSearch"></i>
+          </a>
+        </li>
+
+        <li class="nav-item" [ngClass]="{'show-search': showSearch}" *ngIf="showSearch">
+          <form class="d-flex">
+
+            <div class="input-group">
+
+              <input class="form-control" type="search" placeholder="Pesquisar" aria-label="Search">
+
+              <button class="btn btn-outline-secondary border" type="submit">
+                <i class="fa-regular fa-paper-plane"></i>
+              </button>
+
+            </div>
+
+
+
+          </form>
         </li>
 
 
-
+        <li class="nav-item">
+          <a class="nav-link active a-custom" aria-current="page" routerLink="/carrinho">
+            <i class="fa-solid fa-bag-shopping custom-i"></i>
+          </a>
+        </li>
 
         <li class="nav-item" *ngIf="!isLoggedIn">
-          <a class="nav-link" href="/login">Entrar</a>
+          <a class="nav-link a-custom" href="/login">Entrar</a>
         </li>
 
         <li class="nav-item dropdown" *ngIf="isLoggedIn">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle a-custom" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Perfil
           </a>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -43,8 +79,12 @@
           </ul>
         </li>
 
+
       </ul>
     </div>
+
+
+
   </div>
 </nav>
 
