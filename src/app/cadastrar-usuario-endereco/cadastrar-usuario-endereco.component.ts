@@ -12,7 +12,7 @@ export class CadastrarUsuarioEnderecoComponent {
 
   tipoMensagem: string = '';
   mensagem: string = '';
-  
+
   enderecoForm = new FormGroup({
     cep: new FormControl('', Validators.required),
     pais: new FormControl('', Validators.required),
@@ -28,6 +28,10 @@ export class CadastrarUsuarioEnderecoComponent {
   constructor(
     private authService: AuthService
   ) {}
+
+  ngOnInit(){
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
   cadastrarEndereco() {
     const endereco: Endereco = {

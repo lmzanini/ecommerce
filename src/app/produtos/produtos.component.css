@@ -10,7 +10,7 @@
   background-color: rgba(188, 139, 63, 1);
   /* border: none; */
   border-radius: 0 5px 5px 0;
-  color: #000;
+  color: #fff;
 }
 .btn-outline-secondary:hover{
   background-color: rgba(188, 139, 63, .75);
@@ -22,12 +22,12 @@
 }
 
 a{
-  color: #BC8B3F;
+  color: #fff;
   cursor: pointer;
 }
 
 a:hover{
-  color: #fff;
+  color: #000;
 
 }
 
@@ -35,3 +35,11 @@ a:hover{
 {
   border-right: none !important;
 }
+.text-custom{
+  color: #BC8B3F;
+}
+
+
+/* .produto-custom{
+  min-height: 600px;
+} */

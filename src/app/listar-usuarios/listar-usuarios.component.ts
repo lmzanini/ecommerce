@@ -65,6 +65,7 @@ export class ListarUsuariosComponent {
 
   ngOnInit(): void {
     this.getUsuarios();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   goToNextPage() {

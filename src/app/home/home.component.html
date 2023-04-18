@@ -25,6 +25,7 @@
   </button>
 </div>
 
+
 <hr class="my-4">
 
 
@@ -32,8 +33,12 @@
   <h2 class="mb-4 titulo text-center p-2">Destaques</h2>
 
   <div class="row reset">
-    <div class="col-md-4 mb-4 text-center reset mx-auto" *ngFor="let produto of produtosDestaque">
-      <img [src]="produto.imagens && produto.imagens[0]" class="img-produto rounded-4" alt="Imagem do Produto">
+    <div class="col-md-4 mb-4 text-center reset mx-auto " *ngFor="let produto of produtosDestaque">
+
+      <a (click)="getProdutoPorId(produto.id)">
+        <img [src]="produto.imagens && produto.imagens[0]" class="img-produto rounded-4 border border-dark" alt="Imagem do Produto">
+      </a>
+
     </div>
   </div>
 </div>
@@ -58,23 +63,4 @@
 
     </div>
 
-
-
-  <!-- <div class="container mt-4">
-    <h2>Instagram</h2>
-    <ul class="list-unstyled row">
-      <li class="col-sm-3">
-        <img src="../../assets/images/3.jpg" alt="Imagem 1" class=" d-block w-50 mx-auto rounded-4 shadow-sm mt-2 img-square">
-      </li>
-      <li class="col-sm-3">
-        <img src="../../assets/images/3.jpg" alt="Imagem 1" class=" d-block w-50 mx-auto rounded-4 shadow-sm mt-2 img-square">
-      </li>
-      <li class="col-sm-3">
-        <img src="../../assets/images/3.jpg" alt="Imagem 1" class=" d-block w-50 mx-auto rounded-4 shadow-sm mt-2 img-square">
-      </li>
-      <li class="col-sm-3">
-        <img src="../../assets/images/3.jpg" alt="Imagem 1" class=" d-block w-50 mx-auto rounded-4 shadow-sm mt-2 img-square">
-      </li>
-    </ul>
-  </div> -->
 

@@ -32,6 +32,10 @@ export class CadastrarUsuarioAdminComponent {
 
   constructor(private http: HttpClient, private router: Router) {}
 
+  ngOnInit(){
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
   onSubmit() {
     console.log(this.cadastroForm.value);
     this.http.post('http://localhost:3000/usuarios/cadastroAdmin', this.cadastroForm.value)

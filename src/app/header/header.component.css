@@ -52,3 +52,17 @@ span{
   border-radius: 0 5px 5px 0;
   color: rgba(188, 139, 63, 1);
 }
+
+.texto-header{
+  font-family: 'Jacques Francois', serif;
+
+}
+
+.navbar-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

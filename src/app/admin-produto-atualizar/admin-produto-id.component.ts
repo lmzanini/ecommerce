@@ -45,6 +45,7 @@ export class AdminProdutoIdComponent implements OnInit {
         console.error(error);
       }
     );
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   submitForm(form: any) {

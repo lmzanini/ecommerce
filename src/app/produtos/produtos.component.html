@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="text-center mt-2">Lista de Produtos</h1>
+  <h1 class="text-center mt-2 text-custom">Lista de Produtos</h1>
 
   <div class="row my-3">
     <div class="col">
@@ -26,11 +26,11 @@
           </div>
         </div> -->
 
-        <div class="collapse row border mt-4 container rounded shadow bg-dark center pt-4 pb-4" id="collapseExample">
-          <div class="col-md-3 text-center border-end">
-            <a class="nav-link" (click)="filtrarTodos()">Todos</a>
+        <div class="collapse row border mt-4 container rounded shadow bg-custom center pt-4 pb-4" id="collapseExample">
+          <div class="col-md-3 text-start border-end">
+            <a class="nav-link " (click)="filtrarTodos()">Todos</a>
           </div>
-          <div class="col-md-3 text-center border-end" *ngFor="let categoria of categorias">
+          <div class="col-md-3 text-start border-end" *ngFor="let categoria of categorias">
 
             <a class="nav-link" (click)="filtrarProdutos(categoria.id_categorias)">{{categoria.nome}}</a>
           </div>
@@ -45,25 +45,25 @@
   </div>
 
   <div class="row">
-    <div class="col-md-3 mb-4 mt-4" *ngFor="let produto of produtos">
-      <div class="card bg-dark text-white h-100">
+    <div class="col-md-3 mb-4 mt-4 produto-custom" *ngFor="let produto of produtos">
+      <div class="card bg-light text-custom h-100">
         <img [src]="produto.imagens && produto.imagens[0]" class="card-img-top img-produto" alt="Imagem do Produto">
 
-        <div class="card-body">
-          <h5 class="card-title">{{produto.nome}}</h5>
-          <p class="card-text">{{produto.descricao_curta}}</p>
+        <div class="card-body text-center">
+          <h5 class="card-title text-start">{{produto.nome}}</h5>
+          <p class="card-text text-start">{{produto.descricao_curta}}</p>
 
           <ng-container *ngIf="produto.desconto > 0; else precoNormal">
-            <p class="card-text">
+            <p class="card-text text-start">
               Preço: <del>{{ produto.valor | currency:'BRL' }}</del> {{ produto.valor_atual | currency:'BRL' }}
             </p>
           </ng-container>
 
           <ng-template #precoNormal>
-            <p class="card-text">Preço: {{ produto.valor_atual | currency:'BRL' }}</p>
+            <p class="card-text text-start">Preço: {{ produto.valor_atual | currency:'BRL' }}</p>
           </ng-template>
 
-          <button href="#" class="btn btn-primary" (click)="getProdutoPorId(produto.id)">Detalhes</button>
+          <button class="btn btn-primary" (click)="getProdutoPorId(produto.id)">COMPRAR</button>
         </div>
       </div>
     </div>

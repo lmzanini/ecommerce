@@ -23,6 +23,8 @@ export class ProdutoIdComponent implements OnInit {
 
     // Define a imagem principal como a primeira imagem do array de imagens
     this.imagemPrincipal = this.produto.imagens[0];
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   // Define a imagem principal como a imagem clicada na miniatura

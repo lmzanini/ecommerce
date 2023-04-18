@@ -37,6 +37,7 @@ export class AtualizarUsuarioEnderecoAdminComponent {
         console.error(error);
       }
     );
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
 

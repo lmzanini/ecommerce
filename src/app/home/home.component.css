@@ -51,3 +51,6 @@
 .h-25{
   max-height: 600px !important;
 }
+a{
+  cursor: pointer;
+}

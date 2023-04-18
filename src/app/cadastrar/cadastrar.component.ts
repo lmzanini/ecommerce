@@ -50,6 +50,7 @@ export class CadastrarComponent {
           }
         }
       );
+      window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   removeFormatacaoCpf(cpf: string): string {

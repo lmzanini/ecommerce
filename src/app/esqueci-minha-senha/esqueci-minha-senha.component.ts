@@ -19,6 +19,10 @@ export class EsqueciMinhaSenhaComponent {
 
   constructor(private usuarioService: UsuarioService, private router: Router, private location: Location) {}
 
+  ngOnInit(){
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
   trocarSenha() {
     this.usuarioService
       .trocarSenha(

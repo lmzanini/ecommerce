@@ -47,6 +47,7 @@ export class ProdutosComponent {
   ngOnInit() {
     this.getProdutos();
     this.getCategorias();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   getCategorias() {
@@ -107,7 +108,7 @@ export class ProdutosComponent {
       // Redirecionar para outro componente com as informações do produto
       this.router.navigate(['/produto-id'], { state: { produto: data } });
     });
-}
+  }
 
 getProdutosByCategoriaId(id: number, page: number) {
   this.isLoading = true;

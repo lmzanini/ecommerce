@@ -50,6 +50,7 @@ export class AdminProdutoComponent implements OnInit {
     this.produtoForm = new FormGroup({
       categorias: new FormControl('')
     });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 
   }
 

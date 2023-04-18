@@ -16,6 +16,10 @@ export class LoginComponent {
 
   constructor(private authService: AuthService, private router: Router) {}
 
+  ngOnInit(){
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
   onSubmit() {
     this.authService.login(this.email, this.senha)
       .subscribe(

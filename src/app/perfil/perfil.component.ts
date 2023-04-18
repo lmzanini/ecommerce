@@ -21,6 +21,7 @@ export class PerfilComponent {
       console.log('usuario:', usuario);
       this.usuario = usuario;
     });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
 

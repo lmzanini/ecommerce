@@ -42,7 +42,7 @@ export class AtualizarUsuarioAdminComponent {
       }
     );
 
-
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   atualizarUsuario() {

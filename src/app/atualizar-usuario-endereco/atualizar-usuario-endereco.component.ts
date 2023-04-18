@@ -40,6 +40,7 @@ export class AtualizarUsuarioEnderecoComponent {
         console.error(error);
       }
     );
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
 

@@ -63,6 +63,7 @@ export class ListaProdutoAdminComponent {
 
 ngOnInit(): void {
   this.getProdutos();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 goToNextPage() {

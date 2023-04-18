@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class PainelAdminComponent {
 
+  ngOnInit(){
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }

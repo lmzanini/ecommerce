@@ -38,6 +38,9 @@ import { CadastrarUsuarioEnderecoComponent } from './cadastrar-usuario-endereco/
 import { EsqueciMinhaSenhaComponent } from './esqueci-minha-senha/esqueci-minha-senha.component';
 import { TesteComponent } from './teste/teste.component';
 import { ChunkByPipe } from './chunk-by.pipe';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+
 
 @NgModule({
   declarations: [
@@ -81,6 +84,8 @@ import { ChunkByPipe } from './chunk-by.pipe';
     CommonModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    CarouselModule,
+    SlickCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent],

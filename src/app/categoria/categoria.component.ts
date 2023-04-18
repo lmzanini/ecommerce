@@ -21,6 +21,7 @@ export class CategoriaComponent {
 
   ngOnInit() {
     this.getCategorias();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   onSubmit(nomeCategoria: string) {
