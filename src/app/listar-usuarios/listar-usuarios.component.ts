@@ -48,6 +48,7 @@ export class ListarUsuariosComponent {
         this.isLoading = false;
         console.log(this.usuarios);
       });
+      
   }
 
   deletarUsuario(id: number): void {

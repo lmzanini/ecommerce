@@ -17,7 +17,7 @@ export class EspecificacaoComponent {
   onSubmit(nomeEspecificacao: string, descricaoEspecificacao: string) {
     const body = { nome: nomeEspecificacao, descricao: descricaoEspecificacao };
     this.http
-      .post("http://localhost:3000/especificacoes/cadastrar", body)
+      .post("https://api-riquirri.onrender.com/especificacoes/cadastrar", body)
       .subscribe(
         (response: any) => {
           this.tipoMensagem = 'success';

@@ -31,7 +31,7 @@ export class ProdutosComponent {
   // declara uma função que atualiza a lista de produtos com base na página atual
   getProdutos() {
     this.isLoading = true;
-    this.http.get<any>(`http://localhost:3000/produtos/listarAtivos?page=${this.currentPage}`).subscribe(response => {
+    this.http.get<any>(`https://api-riquirri.onrender.com/produtos/listarAtivos?page=${this.currentPage}`).subscribe(response => {
       this.produtos = response.produtos;
       this.totalPages = response.totalPages;
       console.log(this.totalPages);
@@ -96,14 +96,14 @@ export class ProdutosComponent {
 
 
   buscarProdutos() {
-    this.http.get<any[]>(`http://localhost:3000/produtos/listar/nome?nome=${this.nomeProduto}`).subscribe((produtos) => {
+    this.http.get<any[]>(`https://api-riquirri.onrender.com/produtos/listar/nome?nome=${this.nomeProduto}`).subscribe((produtos) => {
       this.produtos = produtos;
       console.log(produtos);
     });
   }
 
   getProdutoPorId(id: number): void {
-    this.http.get(`http://localhost:3000/produtos/listar/${id}`).subscribe((data) => {
+    this.http.get(`https://api-riquirri.onrender.com/produtos/listar/${id}`).subscribe((data) => {
       console.log(data);
       // Redirecionar para outro componente com as informações do produto
       this.router.navigate(['/produto-id'], { state: { produto: data } });
@@ -112,7 +112,7 @@ export class ProdutosComponent {
 
 getProdutosByCategoriaId(id: number, page: number) {
   this.isLoading = true;
-  this.http.get<any>(`http://localhost:3000/produtos/categoria/${id}?page=${page}`).subscribe(response => {
+  this.http.get<any>(`https://api-riquirri.onrender.com/produtos/categoria/${id}?page=${page}`).subscribe(response => {
     this.produtos = response.produtos;
     this.totalPages = response.totalPages;
     console.log(this.totalPages);

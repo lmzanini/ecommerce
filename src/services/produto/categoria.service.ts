@@ -11,7 +11,7 @@ import { Categoria } from './../../interfaces/produto/categoria.model';
 export class CategoriaService {
 
 
-  private apiUrl = 'http://localhost:3000/categorias';
+  private apiUrl = 'https://api-riquirri.onrender.com/categorias';
 
   constructor(private http: HttpClient) { }
 

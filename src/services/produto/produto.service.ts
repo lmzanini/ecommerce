@@ -8,7 +8,7 @@ import { Produto } from 'src/interfaces/produto/produto.model';
 })
 export class ProdutoService {
 
-  private apiUrl = 'http://localhost:3000/produtos';
+  private apiUrl = 'https://api-riquirri.onrender.com/produtos';
 
   constructor(private http: HttpClient) { }
 

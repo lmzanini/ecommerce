@@ -9,7 +9,7 @@ import { Usuario } from './../../interfaces/usuarios/usuario.model';
 })
 export class UsuarioService {
 
-  private apiUrl = 'http://localhost:3000/usuarios';
+  private apiUrl = 'https://api-riquirri.onrender.com/usuarios';
 
   constructor(private http: HttpClient) { }
 
@@ -75,13 +75,13 @@ export class UsuarioService {
 
 
   buscarEndereco(id: number): Observable<any> {
-    const url = `http://localhost:3000/enderecos/buscar/${id}`;
+    const url = `https://api-riquirri.onrender.com/enderecos/buscar/${id}`;
 
     return this.http.get<any>(url);
   }
 
   atualizarEndereco(id: number, endereco: any) {
-    return this.http.put(`http://localhost:3000/enderecos/atualizar/${id}`, endereco);
+    return this.http.put(`https://api-riquirri.onrender.com/enderecos/atualizar/${id}`, endereco);
   }
 
   trocarSenha(email: string, pergunta_secreta: string, resposta_secreta: string, novaSenha: string): Observable<any> {

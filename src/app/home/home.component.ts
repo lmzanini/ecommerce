@@ -29,19 +29,19 @@ export class HomeComponent implements OnInit {
   }
 
   getProdutoOferta(){
-    this.http.get<any>(`http://localhost:3000/produtos/listarOferta`).subscribe((data) =>{
+    this.http.get<any>(`https://api-riquirri.onrender.com/produtos/listarOferta`).subscribe((data) =>{
       this.produtosOferta = data.produtos
     })
   }
 
   getProdutoDestaque(){
-    this.http.get<any>(`http://localhost:3000/produtos/listarDestaque`).subscribe((data) =>{
+    this.http.get<any>(`https://api-riquirri.onrender.com/produtos/listarDestaque`).subscribe((data) =>{
       this.produtosDestaque = data.produtos
     })
   }
 
   getProdutoPorId(id: number): void {
-    this.http.get(`http://localhost:3000/produtos/listar/${id}`).subscribe((data) => {
+    this.http.get(`https://api-riquirri.onrender.com/produtos/listar/${id}`).subscribe((data) => {
       console.log(data);
       // Redirecionar para outro componente com as informações do produto
       this.router.navigate(['/produto-id'], { state: { produto: data } });

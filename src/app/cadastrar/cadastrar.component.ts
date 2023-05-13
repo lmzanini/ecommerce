@@ -32,7 +32,7 @@ export class CadastrarComponent {
 
   onSubmit() {
     console.log(this.cadastroForm.value);
-    this.http.post('http://localhost:3000/usuarios/cadastro', this.cadastroForm.value)
+    this.http.post('https://api-riquirri.onrender.com/usuarios/cadastro', this.cadastroForm.value)
       .subscribe(
         (response) => {
           this.tipoMensagem = "success";

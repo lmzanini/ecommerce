@@ -19,7 +19,7 @@ interface LoginResponse {
 })
 export class AuthService {
   private readonly TOKEN_KEY = "token";
-  private readonly API_URL = "http://localhost:3000/usuarios/login";
+  private readonly API_URL = "https://api-riquirri.onrender.com/usuarios/login";
 
 
   private isLoggedInSubject = new BehaviorSubject<boolean>(this.hasToken());
@@ -94,7 +94,7 @@ export class AuthService {
     }
 
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    const apiUrl = 'http://localhost:3000/usuarios/me';
+    const apiUrl = 'https://api-riquirri.onrender.com/usuarios/me';
 
     if (this.isTokenExpired(token)) {
       // Renova o token
@@ -119,7 +119,7 @@ export class AuthService {
   }
 
   renewToken(): Observable<LoginResponse> {
-    const renewUrl = 'http://localhost:3000/usuarios/renew';
+    const renewUrl = 'https://api-riquirri.onrender.com/usuarios/renew';
     const headers = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem(this.TOKEN_KEY)}`);
     return this.http.post<LoginResponse>(renewUrl, {}, { headers }).pipe(
       tap((response) => {
@@ -141,7 +141,7 @@ export class AuthService {
     }
 
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    const apiUrl = 'http://localhost:3000/usuarios/me';
+    const apiUrl = 'https://api-riquirri.onrender.com/usuarios/me';
 
     if (this.isTokenExpired(token)) {
       // Renova o token
@@ -170,7 +170,7 @@ export class AuthService {
     }
 
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    const apiUrl = 'http://localhost:3000/enderecos/cadastro';
+    const apiUrl = 'https://api-riquirri.onrender.com/enderecos/cadastro';
 
     if (this.isTokenExpired(token)) {
       // Renova o token
